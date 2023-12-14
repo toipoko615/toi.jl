@@ -1,5 +1,7 @@
 module Toi
 
+using ITensors
+using Quantics
 
     function check_array_and_get_r(arr::Vector)
         # 配列の要素数を取得
@@ -583,7 +585,7 @@ module Toi
         MPOin=MPOindex2(linkindexs,R,N)
         MPO_=tensorinMPO(qttar,MPOin)
         QTTMPO=MPOartoMPO(MPO_)
-        return QTTMPO,MPOin,links,R
+        return QTTMPO,MPOin,links,R,N
     end
 
     function MPOintoMPSones(MPOin,links,R,N)
